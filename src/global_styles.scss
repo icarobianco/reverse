@@ -1,0 +1,33 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$magenta-palette,
+    tertiary: mat.$azure-palette,
+  ),
+  density: (
+    scale: 0
+  )
+));
+
+@include mat.color-variants-backwards-compatibility($theme);
+@include mat.typography-hierarchy($theme);
+
+html {
+  @include mat.all-component-themes($theme);
+  // @include mat.core-theme($theme);
+  // @include mat.button-theme($theme);
+}
+
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+} 
+  
+body {
+  margin: 0;
+  padding: 0;
+  // background-color: rgb(223, 223, 223);
+}

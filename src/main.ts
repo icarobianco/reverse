@@ -1,18 +1,23 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { bootstrapApplication } from '@angular/platform-browser';
+
+import { appConfig } from './main.config';
+
+import { TshirtComponent } from './components/tshirt/tshirt.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [
+    TshirtComponent
+  ],
   template: `
-    <h1>Hello from {{ name }}!</h1>
-    <a target="_blank" href="https://angular.dev/overview">
-      Learn more about Angular
-    </a>
+    <app-tshirt>Loading...</app-tshirt>
   `,
 })
 export class App {
   name = 'Angular';
 }
 
-bootstrapApplication(App);
+bootstrapApplication(App, appConfig);
