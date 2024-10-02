@@ -26,7 +26,7 @@ export class TshirtComponent implements AfterContentInit {
 
   ngAfterContentInit(): void {
     // console.log('TshirtComponent', 'ngAfterContentInit');  
-    this.openDialog('1000ms','1000ms');
+    // this.openDialog('1000ms','1000ms');
   }
   
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
